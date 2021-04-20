@@ -16,7 +16,7 @@ WORKDIR /usr/src/app/user-service
 FROM open-liberty:19.0.0.12-kernel-java8-openj9
 
 USER root
-RUN apt-get update && apt-get upgrade -y e2fsprogs libgnutls30 libgcrypt20 libsasl2-2
+RUN apt-get update && apt-get upgrade -y e2fsprogs libgnutls30 libgcrypt20 libsasl2-2 unzip
 USER 1001
 
 COPY --from=BUILD --chown=1001:0 /usr/src/app/user-service/src/main/liberty/config/ /config/
